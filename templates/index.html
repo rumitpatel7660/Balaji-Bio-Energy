@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balaji Bio Energy - Leading Biofuel Manufacturer</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/balaji-icon.png') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Animation classes */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-slide-in {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        .animate-scale-in {
+            animation: scaleIn 0.5s ease-out forwards;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        .hover-glow {
+            transition: all 0.3s ease;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .hover-underline {
+            position: relative;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FFD700;
+            transition: width 0.3s ease;
+        }
+        .hover-underline:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    {% include 'menubar.html' %}
+
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-r from-green-600 via-green-500 to-green-600 overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-500 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45IDAtMTggOC4xLTE4IDE4czguMSAxOCAxOCAxOCAxOC04LjEgMTgtMTgtOC4xLTE4LTE4LTE4em0wIDJjOC44IDAgMTYgNy4yIDE2IDE2cy03LjIgMTYtMTYgMTYtMTYtNy4yLTE2LTE2IDcuMi0xNiAxNi0xNnoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-10"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+            <div class="text-center md:text-left">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                    <span class="block">Welcome to</span>
+                    <span class="block text-green-200">Balaji Bio Energy</span>
+                </h1>
+                <p class="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-green-100 max-w-3xl mx-auto md:mx-0 leading-relaxed">
+                    Leading manufacturer and supplier of high-quality biofuel products in Jamnagar, Gujarat. We are committed to providing sustainable energy solutions.
+                </p>
+                <div class="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="/contact" class="inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 border border-transparent text-base sm:text-lg font-medium rounded-full text-green-600 bg-white hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                        Contact Us
+                    </a>
+                    <a href="/products" class="inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-white text-base sm:text-lg font-medium rounded-full text-white hover:bg-white hover:text-green-600 transition duration-300 ease-in-out transform hover:scale-105">
+                        View Products
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative bottom border -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg class="w-full h-8 sm:h-12 text-white" viewBox="0 0 1440 120" fill="currentColor" preserveAspectRatio="none">
+                <path d="M0,0 C150,60 350,0 500,60 C650,120 800,0 1000,60 C1200,120 1350,0 1440,60 L1440,120 L0,120 Z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Our Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Biomass Briquettes</h3>
+                    <p class="text-sm sm:text-base text-gray-600">High-quality biomass briquettes made from renewable sources, perfect for industrial and commercial use.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Rice Husk Briquettes</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Premium grade rice husk briquettes with low moisture content and high energy output.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Sawdust Briquettes</h3>
+                    <p class="text-sm sm:text-base text-gray-600">High-density sawdust briquettes with long burning time and minimal smoke emission.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Wood Briquettes</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Clean-burning wood briquettes with high energy output and low moisture content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Why Choose Us</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+                <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg text-center transform transition duration-300 hover:scale-105">
+                    <div class="text-green-600 text-3xl sm:text-4xl mb-4">✓</div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Quality Assured</h3>
+                    <p class="text-sm sm:text-base text-gray-600 mt-2">All products meet international quality standards</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg text-center transform transition duration-300 hover:scale-105">
+                    <div class="text-green-600 text-3xl sm:text-4xl mb-4">🌱</div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Eco-Friendly</h3>
+                    <p class="text-sm sm:text-base text-gray-600 mt-2">Sustainable and renewable energy solutions</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg text-center transform transition duration-300 hover:scale-105">
+                    <div class="text-green-600 text-3xl sm:text-4xl mb-4">🚚</div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Timely Delivery</h3>
+                    <p class="text-sm sm:text-base text-gray-600 mt-2">Efficient logistics and on-time delivery</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg text-center transform transition duration-300 hover:scale-105">
+                    <div class="text-green-600 text-3xl sm:text-4xl mb-4">💼</div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Expert Support</h3>
+                    <p class="text-sm sm:text-base text-gray-600 mt-2">Professional technical assistance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="bg-green-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+            <div class="text-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
+                <p class="text-base sm:text-lg text-green-100 mb-6 sm:mb-8 max-w-2xl mx-auto">
+                    Contact us today to learn more about our products and how we can help meet your energy needs.
+                </p>
+                <a href="/contact" class="inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-green-600 rounded-full text-base sm:text-lg font-medium hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+    <style>
+        /* Add smooth scrolling to the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Improve touch targets on mobile */
+        @media (max-width: 640px) {
+            .hover\:scale-105:hover {
+                transform: none;
+            }
+        }
+    </style>
+</body>
+</html> 

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Balaji Bio Energy</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/balaji-icon.png') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <style>
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Animation classes */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-slide-in {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        .animate-scale-in {
+            animation: scaleIn 0.5s ease-out forwards;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        .hover-glow {
+            transition: all 0.3s ease;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .hover-underline {
+            position: relative;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FFD700;
+            transition: width 0.3s ease;
+        }
+        .hover-underline:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-gray-50 to-gray-100">
+    {% include 'menubar.html' %}
+
+    <!-- Page Header -->
+    <div class="relative bg-gradient-to-r from-green-600 to-green-700 py-16">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 mix-blend-multiply"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl animate-fade-in">
+                    Our Products
+                </h1>
+                <div class="mt-6 max-w-3xl mx-auto">
+                    <p class="text-xl text-green-100 leading-relaxed animate-fade-in" style="animation-delay: 0.2s;">
+                        Leading Manufacturer of Biomass Briquettes, Rice Husk Briquettes, Sawdust Briquette and Wood Briquettes from Jamnagar
+                    </p>
+                </div>
+                <div class="mt-8 flex justify-center">
+                    <div class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-green-700 bg-white hover:bg-green-50 transition duration-300 animate-scale-in">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        Premium Quality Products
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative bottom border -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg class="w-full h-12 text-white" viewBox="0 0 1440 120" fill="currentColor" preserveAspectRatio="none">
+                <path d="M0,0 C150,60 350,0 500,60 C650,120 800,0 1000,60 C1200,120 1350,0 1440,60 L1440,120 L0,120 Z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- Biomass Briquettes -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl animate-scale-in" style="animation-delay: 0.2s;">
+                <div class="relative">
+                    <img src="{{ url_for('static', filename='images/biomass_briquettes.png') }}" 
+                         alt="Biomass Briquettes" 
+                         class="w-full h-72 object-cover"
+                         onerror="this.src='/static/images/products/placeholder.jpg'">
+                    <div class="absolute top-2 right-2">
+                        <a href="{{ url_for('static', filename='images/biomass_briquettes.png') }}" 
+                           data-lightbox="biomass-gallery" 
+                           data-title="Biomass Briquettes"
+                           class="bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">
+                            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Biomass Briquettes</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">Product Specifications</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex justify-between">
+                                    <span>Packaging Size:</span>
+                                    <span>25 Kg</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Material:</span>
+                                    <span>Wooden</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Packaging Type:</span>
+                                    <span>PP Bag</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Country of Origin:</span>
+                                    <span>Made in India</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="/contact" class="block text-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300">
+                            Get Best Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rice Husk Briquettes -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl animate-scale-in" style="animation-delay: 0.4s;">
+                <div class="relative">
+                    <img src="{{ url_for('static', filename='images/rice_husk.png') }}" 
+                         alt="Rice Husk Briquettes" 
+                         class="w-full h-72 object-cover"
+                         onerror="this.src='/static/images/products/placeholder.jpg'">
+                    <div class="absolute top-2 right-2">
+                        <a href="{{ url_for('static', filename='images/rice_husk.png') }}" 
+                           data-lightbox="rice-husk-gallery" 
+                           data-title="Rice Husk Briquettes"
+                           class="bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">
+                            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Rice Husk Briquettes</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">Product Specifications</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex justify-between">
+                                    <span>Packaging Size:</span>
+                                    <span>35 kg</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Packaging Type:</span>
+                                    <span>PP Bag</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Moisture:</span>
+                                    <span>3%</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Country of Origin:</span>
+                                    <span>Made in India</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="/contact" class="block text-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300">
+                            Get Best Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sawdust Briquettes -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl animate-scale-in" style="animation-delay: 0.6s;">
+                <div class="relative">
+                    <img src="{{ url_for('static', filename='images/sawdust.jpeg') }}" 
+                         alt="Sawdust Briquettes" 
+                         class="w-full h-72 object-cover"
+                         onerror="this.src='/static/images/products/placeholder.jpg'">
+                    <div class="absolute top-2 right-2">
+                        <a href="{{ url_for('static', filename='images/sawdust.jpeg') }}" 
+                           data-lightbox="sawdust-gallery" 
+                           data-title="Sawdust Briquettes"
+                           class="bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">
+                            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Sawdust Briquettes</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">Product Features</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-center">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    High density and consistent quality
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    Long burning time
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    Minimal smoke emission
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    Cost-effective fuel solution
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="/contact" class="block text-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300">
+                            Get Best Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wood Briquettes -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl animate-scale-in" style="animation-delay: 0.8s;">
+                <div class="relative">
+                    <img src="{{ url_for('static', filename='images/wood_dust.jpeg') }}" 
+                         alt="Wood Briquettes" 
+                         class="w-full h-72 object-cover"
+                         onerror="this.src='/static/images/products/placeholder.jpg'">
+                    <div class="absolute top-2 right-2">
+                        <a href="{{ url_for('static', filename='images/wood_dust.jpeg') }}" 
+                           data-lightbox="wood-gallery" 
+                           data-title="Wood Briquettes"
+                           class="bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">
+                            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Wood Briquettes</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">Product Features</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-center">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    High energy output
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    Clean burning
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    Low moisture content
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    Sustainable fuel source
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="/contact" class="block text-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300">
+                            Get Best Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Our Products -->
+    <div class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center animate-fade-in">Why Choose Our Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg text-center transform transition duration-300 hover:scale-105 animate-scale-in">
+                    <div class="text-green-600 text-4xl mb-4">✓</div>
+                    <h3 class="text-lg font-semibold text-gray-900">Quality Assured</h3>
+                    <p class="text-gray-600 mt-2">All products meet international quality standards</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg text-center transform transition duration-300 hover:scale-105 animate-scale-in">
+                    <div class="text-green-600 text-4xl mb-4">🌱</div>
+                    <h3 class="text-lg font-semibold text-gray-900">Eco-Friendly</h3>
+                    <p class="text-gray-600 mt-2">Sustainable and renewable energy solutions</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg text-center transform transition duration-300 hover:scale-105 animate-scale-in">
+                    <div class="text-green-600 text-4xl mb-4">🚚</div>
+                    <h3 class="text-lg font-semibold text-gray-900">Timely Delivery</h3>
+                    <p class="text-gray-600 mt-2">Efficient logistics and on-time delivery</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg text-center transform transition duration-300 hover:scale-105 animate-scale-in">
+                    <div class="text-green-600 text-4xl mb-4">💼</div>
+                    <h3 class="text-lg font-semibold text-gray-900">Expert Support</h3>
+                    <p class="text-gray-600 mt-2">Professional technical assistance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="bg-gradient-to-r from-green-600 to-green-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+            <div class="text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4 animate-fade-in">Interested in Our Products?</h2>
+                <p class="text-green-100 mb-8 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
+                    Contact us today to learn more about our biomass briquettes and get a quote for your requirements.
+                </p>
+                <a href="/contact" class="inline-block bg-white text-green-600 px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg animate-scale-in">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+    <!-- Add Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <style>
+        /* Add smooth scrolling to the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Improve touch targets on mobile */
+        @media (max-width: 640px) {
+            .hover\:scale-105:hover {
+                transform: none;
+            }
+        }
+
+        /* Lightbox customization */
+        .lb-data .lb-caption {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .lb-data .lb-number {
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</body>
+</html> 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Balaji Bio Energy</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/balaji-icon.png') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Animation classes */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-slide-in {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        .animate-scale-in {
+            animation: scaleIn 0.5s ease-out forwards;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        .hover-glow {
+            transition: all 0.3s ease;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .hover-underline {
+            position: relative;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FFD700;
+            transition: width 0.3s ease;
+        }
+        .hover-underline:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    {% include 'menubar.html' %}
+
+    <!-- About Hero Section -->
+    <div class="relative bg-gradient-to-r from-green-600 via-green-500 to-green-600 overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-500 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45IDAtMTggOC4xLTE4IDE4czguMSAxOCAxOCAxOCAxOC04LjEgMTgtMTgtOC4xLTE4LTE4LTE4em0wIDJjOC44IDAgMTYgNy4yIDE2IDE2cy03LjIgMTYtMTYgMTYtMTYtNy4yLTE2LTE2IDcuMi0xNiAxNi0xNnoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-10"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white">
+                    <span class="block">About</span>
+                    <span class="block text-green-200">Balaji Bio Energy</span>
+                </h1>
+                <p class="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-green-100 max-w-3xl mx-auto">
+                    Leading the way in sustainable energy solutions with 8 years of excellence
+                </p>
+            </div>
+        </div>
+        
+        <!-- Decorative bottom border -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg class="w-full h-8 sm:h-12 text-white" viewBox="0 0 1440 120" fill="currentColor" preserveAspectRatio="none">
+                <path d="M0,0 C150,60 350,0 500,60 C650,120 800,0 1000,60 C1200,120 1350,0 1440,60 L1440,120 L0,120 Z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Company Overview -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            <div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Our Story</h2>
+                <p class="text-base sm:text-lg text-gray-600 mb-4">
+                    Balaji Bio Energy is a leading manufacturer of high-quality biomass briquettes based in Jamnagar, Gujarat. With 8 years of experience in the industry, we have established ourselves as a verified supplier of sustainable energy solutions.
+                </p>
+                <p class="text-base sm:text-lg text-gray-600 mb-4">
+                    Our manufacturing facility is equipped with advanced technology and follows strict quality control measures to ensure the highest standards in our products. We specialize in the production of various biomass briquettes including rice husk briquettes, sawdust briquettes, and wood briquettes.
+                </p>
+                <p class="text-base sm:text-lg text-gray-600 mb-4">
+                    Located in the industrial hub of Jamnagar, our facility is strategically positioned to serve both domestic and international markets. We take pride in our commitment to environmental sustainability and renewable energy solutions.
+                </p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-6 sm:p-8">
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Business Information</h3>
+                <div class="space-y-3 sm:space-y-4">
+                    <div>
+                        <p class="text-base sm:text-lg text-gray-600"><span class="font-semibold">Nature of Business:</span> Manufacturer</p>
+                        <p class="text-base sm:text-lg text-gray-600"><span class="font-semibold">Additional Business:</span> Factory / Manufacturing, Wholesale Business</p>
+                        <p class="text-base sm:text-lg text-gray-600"><span class="font-semibold">Company CEO:</span> Umaretiya Hetal Niteshkumar</p>
+                        <p class="text-base sm:text-lg text-gray-600"><span class="font-semibold">GST No:</span> 24ALHPU9993Q1ZQ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Our Core Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Quality</h3>
+                    <p class="text-sm sm:text-base text-gray-600">We maintain the highest standards in our products and services, ensuring that every batch meets international quality specifications.</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Sustainability</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Committed to eco-friendly practices and renewable energy solutions, we minimize our environmental impact while maximizing efficiency.</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Innovation</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Continuously improving our processes and products through innovation, we stay ahead of industry standards and customer expectations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html> 
